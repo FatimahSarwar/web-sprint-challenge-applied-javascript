@@ -11,8 +11,25 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
-}
+const divHeader = document.createElement('div');
+const spanDate = document.createElement('span');
+const divTitle = document.createElement('h1');
+const spanTemp = document.createElement('span');
 
+divHeader.classList.add('header');
+spanDate.classList.add('date');
+spanTemp.classList.add('temp');
+
+divHeader.appendChild(spanDate);
+divHeader.appendChild(divTitle);
+divHeader.appendChild(spanTemp);
+
+divTitle.textContent = title;
+spanDate.textContent = date;
+spanTemp.textContent = temp;
+return divHeader;
+}
+Header('Lambda Times', 'January 6, 2021' , '26 degrees');
 const headerAppender = (selector) => {
   // TASK 2
   // ---------------------
